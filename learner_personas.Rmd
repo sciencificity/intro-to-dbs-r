@@ -1,0 +1,114 @@
+---
+title: "Learner Personas"
+author: "Vebash Naidoo"
+date: "22/11/2020"
+output:
+  html_document:
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tibble)
+```
+
+### Meet Sipho Selectman
+
+
+<img src=sipho.PNG alt="avatar from diversitytech.co" width="200" height="200">
+
+
+#### General Background
+
+Sipho is from a township named Soweto in Johannesburg South Africa. He loves tinkering,
+and is currently learning how to drive since he
+recently was promoted to a Business Analyst position. He's worked for 5 years as an IT Technician, but has always been interested in data and using it to solve problems.
+
+#### Starting Point
+
+Sipho has used Excel, and is very familiar with building and rebuilding servers.
+
+He has really good SQL knowledge despite being mainly self taught (he did one introductory course as part of his IT diploma but that was 8 years ago). He's confident in his SQL knowledge, and feels his management feel the same, hence his recent promotion. 
+
+While he uses SQL through DBeaver to query the company's data he has started learning R this year, and is going through _R for Data Science_.
+
+His partner also told him about R-Ladies Johannesburg, so he has attended meetups all year with her online. The year has been strange, but with lots of R-Ladies chapters moving online, he
+has been grateful to have attended R-Ladies Nigeria meetups, as well as others in similar timezones.
+
+#### Perceived Needs
+
+With his recent promotion, he's keen to learn how to connect to databases directly from R so that he can leverage the tidyverse techniques he's been learning all year, and flex that skill a bit more.
+
+#### Special considerations
+
+Sipho does not have a formal degree, and is very shy about his knowledge. He does not want to be seen as incompetent to his colleagues, and management, and hence he'd much rather struggle through problems than asking questions that may reveal his ignorance (he's certain he will find a SO post that will help him, even if it is after the workshop has ended). It's also due to this insecurity that he prefers working alone rather than in a group.
+
+```{r, echo = FALSE}
+tribble(
+  ~`Domain Knowledge`, ~`Stats Knowledge`, ~`Programming Knowledge`,
+  #---------------#--------------#-----------
+  "novice",        "novice",      "competent"
+) %>% 
+  gt::gt()
+```
+
+<br> <br>
+
+
+### Meet Josephine Join
+
+<img src=joe.PNG alt="avatar from diversitytech.co" width="200" height="200">
+
+
+#### General Background
+
+Joe, as she's affectionately called, is a single parent who works full time. She believes education is really important, and spends all her free time (which is not much `r emo::ji("sad")`) helping her kids with their homework, with particular emphasis on STEM subjects. After all, she is the first in her family to graduate with a degree (Computer Science), and intends on keeping that momentum going with her kids. 
+
+#### Starting Point
+
+Joe works extensively in Excel, and uses R  (tidyverse only, please `r emo::ji("grin")`), in many ad-hoc analyses as part of her job. She usually puts in a request for data with her DBA, and uses the csv's she receives to do these analyses. Sometimes the datasets are big and she joins several csv's together, and analysing this data in R takes a long time `r emo::ji("scream")`.
+
+
+#### Perceived Needs
+
+Her company is merging with another, and is about to nearly double in size. The data was already becoming quite large but upon data take-on will be even larger. Furthermore the company's DBs are all moving to the cloud in future, and her DBA has her own hands full with projects regarding the move and maintaining the new infrastructure. Joe needs to start connecting to the DB, and doing her own extraction of data in the interim, and to the cloud DBs once those are in place.
+
+She is therefore looking for a workshop that will give her the tools to do these tasks at her job, and speed up her analysis tasks.
+
+
+#### Special considerations
+
+Joe takes a minibus taxi from her home to work everyday at 5:30 AM, and only gets home at 6:30 PM. She does not have much time outside of work to watch tutorials or do courses to gain further knowledge. Her _at work hours_, are all she can dedicate to the learning and working endeavour. She's really proud of being the first in her family to graduate, and thinks Googling is her superpower `r emo::ji("muscle")` so she can sometimes come across as brusque, or impatient with slower individuals.
+
+
+```{r, echo = FALSE}
+tribble(
+  ~`Domain Knowledge`, ~`Stats Knowledge`, ~`Programming Knowledge`,
+  #---------------#--------------#-----------
+  "expert",        "competent",      "expert"
+) %>% 
+  gt::gt()
+```
+
+<br> <br>
+
+### Workshop Blurb
+
+We're excited to bring you a workshop titled: __Introduction to using Databases in R, with Tidyverse tools__, which will teach you how to connect to Databases from RStudio, query and join tables using dplyr syntax, while executing these queries directly on the DB (often termed in-place). We will also pull the final data into R to explore further using other tidyverse tools such as `ggplot`.
+
+The workshop is hands on and is mainly targeted to data management, manipulation and exploration.
+
+
+#### Prerequisites
+
+1. You're comfortable with most `dplyr` operations such as __select()__, __mutate()__, __filter()__ etc. If you are able to comfortably work through these [primers](https://rstudio.cloud/learn/primers/2), the workshop will suit you.
+
+1. You know how to `join` data using dplyr. [Here](https://stat545.com/join-cheatsheet.html) is a good resource to brush up on this.
+
+1. You're comfortable with the basics of R Markdown. If you are unfamiliar with R Markdown, please review these short guides before participating in the tutorial: [Introduction](https://rmarkdown.rstudio.com/lesson-1.html), [How It Works](https://rmarkdown.rstudio.com/lesson-2.html), [Code Chunks](https://rmarkdown.rstudio.com/lesson-3.html).
+
+
+<br> <br> <br> <br>
+
+
+
