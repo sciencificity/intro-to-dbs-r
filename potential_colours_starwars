@@ -1,0 +1,29 @@
+starwars colours
+
+#559e9e = cyan (cadetblue)
+
+#ac35c1 = violet (darkorchid)
+
+#92a1a1 = silver (darkgray)
+
+#36d335 = green (limegreen)
+
+#ba2e2e = red (firebrick)
+
+#50a167 = viridian (mediumseagreen)
+
+
+new hope colours
+
+#d6bf7c (burlywood, like a beige)
+#efb087 (peach)
+#ae659d (palevioletred)
+#9d5a61 (indianred)
+#155c9e (teal)
+#62a0db (cornflowerblue)
+#442f14 (darkolivegreen)
+#fbfffe (white)
+#354099 (darkslateblue)
+#c2834d (*peru, like an orange)
+
+<span style="color: #9d5a61;background-color:#d6bf7c">results<a href="https://bakeoff.netlify.app/reference/results.html"></a></span> which tells us [how each baker did](https://bakeoff.netlify.app/reference/results.html) in the episode - `IN`, `OUT`, `WINNER` etc.

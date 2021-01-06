@@ -1,6 +1,0 @@
-"0","knitr::opts_chunk$set("
-"0","    echo = TRUE,"
-"0","    message = FALSE,"
-"0","    warning = FALSE,"
-"0","    eval = TRUE"
-"0",")"

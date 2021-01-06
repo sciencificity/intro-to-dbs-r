@@ -1,0 +1,51 @@
+---
+title: "Read data from MySQL DB"
+author: "Vebash Naidoo"
+date: "29/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(DBI)
+```
+
+## What ODBC Drivers do we have?
+
+```{r}
+sort(unique(odbc::odbcListDrivers()[[1]]))
+```
+
+## Let's connect via RStudio's `Connections` pane
+
+1. We can make an `odbc` connection.
+1. Go to [connection strings](https://www.connectionstrings.com/) to find the appropriate connection string to use.
+1. Choose your DB, here we'll choose `MySQL`.
+1. Copy the __Specifying TCP port__ string.
+1. Click on the "Connections" tab - mine is with the `Environment`, `Files`, `Git` tabs in RStudio.
+1. Choose `New Connection` -> `MySQL...`
+1. Paste the copied TCP string in the `Parameters` box. Notice that when you press test the string you added is appended to the `.connection_string` parameter.
+1. Copy the connection string created in this process onto your clipboard.
+
+```{r}
+# The connection string as per the `New Connection` 
+# process
+con <- dbConnect(odbc::odbc(), 
+                 .connection_string = "Driver={MySQL ODBC 8.0 Unicode Driver};Server=localhost;Port=3306;Database=starwars;Uid=admin;Pwd=Luke1@my0urf@ther;", 
+                 timeout = 10)
+```
+
+```{r}
+tbl(con, "characters") %>% 
+  left_join(tbl(con, "appearances")) %>% 
+  left_join(tbl(con, "films"),
+            by = c("film_id" = "id")) %>% 
+  glimpse()
+```
+
+
+```{r}
+dbDisconnect(con)
+```
+
