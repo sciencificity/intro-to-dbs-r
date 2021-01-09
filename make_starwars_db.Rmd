@@ -266,16 +266,27 @@ library(DBI)
 library(RMariaDB)
 
 # Make a connection
+con <- dbConnect(odbc::odbc(), 
+  .connection_string = "Driver={MySQL ODBC 8.0 Unicode Driver};Server=localhost;Port=3306;Database=starwars;Uid=admin;Pwd=Luke1@my0urf@ther;", 
+    timeout = 10)
+
+# What tables do we have? Should be none or character(0)
+# when you first connect after creating the DB Shell
+dbListTables(con)
+```
+
+Alternately we can use the driver.
+
+```{r, eval = FALSE}
+# Alternate way to make a connection
 con <- dbConnect(drv = RMariaDB::MariaDB(), 
                  host = "localhost", 
                  port = "3306",
                  user = "admin", 
                  password = "Luke1@my0urf@ther",
                  dbname = "starwars")
-
-# What tables do we have? Should be none or character(0)
-# when you first connect after creating the DB Shell
 dbListTables(con)
+dbDisconnect(con)
 ```
 
 ```{r}
